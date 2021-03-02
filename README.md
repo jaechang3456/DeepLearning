@@ -41,3 +41,39 @@ loss 차트
 X축은 epoch인걸 알수있는데, 위 그래프에서는 epoch 4~5 사이에서부터 validation값과, train값의 loss와 accuracy차이가 증가함을 볼 수 있다.
 이러한 상황을 오버피팅 되었다고 하는데, 너무 많은 데이터를 학습시키면 train값의 loss는 줄어들고, accuracy는 올라갈수 있어도, 새로 알게되는 값, 즉 우리가 예측해야 할 값을 제대로 예측하지 못하는 상황이 발생한다.
   
+###콜백 함수 사용법
+# 함수로 작성.
+def train_mnist():
+    
+    class myCallback(tf.keras.callbacks.Callback) :
+      def on_epoch_end(self, epoch, logs={}) :
+          if(logs.get('accuracy') > 0.99 ) :
+            print('\n"Reached 99% accuracy so cancelling training!"')
+            self.model.stop_training = True
+    my_cb = myCallback()
+    
+    mnist = tf.keras.datasets.mnist
+
+    (X_train, y_train),(X_test, y_test) = mnist.load_data()
+    X_train = X_train.reshape(-1 , 28*28)
+    X_test = X_test.reshape(-1, 28*28)
+    X_train = X_train / 255.0
+    X_test = X_test / 255.0
+    model = tf.keras.models.Sequential([
+        Dense(input_dim = 784, units=512, activation='relu'),
+        Dense(units=512, activation='relu'),
+        Dense(units=10, activation ='softmax')
+    ])
+    model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+
+    # model fitting
+    history = model.fit(
+        X_train, y_train,
+        epochs = 8,
+        callbacks = [my_cb]
+    )
+    # model fitting
+
+    return history.epoch, history.history['accuracy'][-1]
