@@ -4,7 +4,7 @@
 ex) model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy']
 
 ### 러닝커브 함수 코드와 트레이닝 어큐러시, 밸리데이션 어큐러시를 통한 오버피팅 
-#### 러닝커브 함수를 만드는 함수는 다음과 같다.
+## 러닝커브 함수를 만드는 함수는 다음과 같다.
 
 def learning_curve(history, epoch):
 
