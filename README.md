@@ -12,6 +12,7 @@ def learning_curve(history, epoch) :
 정확도 차트
   
   epoch_range = np.arange(1, epoch +1)
+  
   plt.subplot(1, 2, 1)
   plt.plot(epoch_range, history.history['accuracy'])
   plt.plot(epoch_range, history.history['val_accuracy'])
