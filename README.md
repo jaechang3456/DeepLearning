@@ -31,5 +31,6 @@ def learning_curve(history, epoch) :
   plt.ylabel('Loss')
   plt.legend(['Train', 'Val'])
   plt.show()
+![다운로드](https://user-images.githubusercontent.com/78472987/109621966-eef40f80-7b7e-11eb-8831-c7c82f7e6c15.png)
 
   learning_curve(history, 10)
