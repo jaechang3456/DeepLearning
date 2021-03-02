@@ -10,8 +10,6 @@ def learning_curve(history, epoch) :
 
   plt.figure(figsize=(10,5))
   
-정확도 차트
-  
   epoch_range = np.arange(1, epoch +1)
   
   plt.subplot(1, 2, 1) 
@@ -23,8 +21,6 @@ def learning_curve(history, epoch) :
   plt.legend(['Train', 'Val'])
   plt.show()
 
-loss 차트
-  
   plt.subplot(1, 2, 2)
   plt.plot(epoch_range, history.history['loss'])
   plt.plot(epoch_range, history.history['val_loss'])
