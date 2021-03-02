@@ -4,11 +4,11 @@
 ex) model.compile(optimizer='', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy']
 
 ### 러닝커브 함수 코드와 트레이닝 어큐러시, 밸리데이션 어큐러시를 통한 오버피팅 
-#### def learning_curve(history, epoch) :
+#### 러닝커브 함수를 만드는 함수는 다음과 같다.
+def learning_curve(history, epoch) :
 
   plt.figure(figsize=(10,5))
-
-  # 정확도 차트
+  정확도 차트
   epoch_range = np.arange(1, epoch +1)
 
   plt.subplot(1, 2, 1)
@@ -19,10 +19,9 @@ ex) model.compile(optimizer='', loss = 'sparse_categorical_crossentropy', metric
   plt.xlabel('Epoch')
   plt.ylabel('Accuracy')
   plt.legend(['Train', 'Val'])
-#  plt.show()
+  plt.show()
 
-  # loss 차트
-  
+  loss 차트
   plt.subplot(1, 2, 2)
 
   plt.plot(epoch_range, history.history['loss'])
@@ -32,5 +31,5 @@ ex) model.compile(optimizer='', loss = 'sparse_categorical_crossentropy', metric
   plt.ylabel('Loss')
   plt.legend(['Train', 'Val'])
   plt.show()
-  
+
   learning_curve(history, 10)
