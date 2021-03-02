@@ -6,7 +6,7 @@ ex) model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy', me
 ### 러닝커브 함수 코드와 트레이닝 어큐러시, 밸리데이션 어큐러시를 통한 오버피팅 
 #### 러닝커브 함수를 만드는 함수는 다음과 같다.
 
-def learning_curve(history, epoch) :
+def learning_curve(history, epoch):
 
   plt.figure(figsize=(10,5))
   
@@ -29,7 +29,7 @@ def learning_curve(history, epoch) :
   plt.ylabel('Loss')
   plt.legend(['Train', 'Val'])
   plt.show()
-  return
+  return 0
 
   
 ![다운로드](https://user-images.githubusercontent.com/78472987/109621966-eef40f80-7b7e-11eb-8831-c7c82f7e6c15.png)
