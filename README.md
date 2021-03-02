@@ -8,9 +8,10 @@ ex) model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy', me
 def learning_curve(history, epoch) :
 
   plt.figure(figsize=(10,5))
-  정확도 차트
   
-  epoch_range = np.arange(1, epoch +1)\n
+정확도 차트
+  
+  epoch_range = np.arange(1, epoch +1)
   plt.subplot(1, 2, 1)
   plt.plot(epoch_range, history.history['accuracy'])
   plt.plot(epoch_range, history.history['val_accuracy'])
@@ -20,7 +21,7 @@ def learning_curve(history, epoch) :
   plt.legend(['Train', 'Val'])
   plt.show()
 
-  loss 차트
+loss 차트
   
   plt.subplot(1, 2, 2)
   plt.plot(epoch_range, history.history['loss'])
@@ -35,3 +36,5 @@ def learning_curve(history, epoch) :
 
   함수를 정의하고, 아래와 같이 호출시 위와 같은 그림이 나온다.
   learning_curve(history, 10)
+러닝커브 함수를 사용하면, loss값과 accuracy값이 눈에 한번에 보여 분석하기 쉽다. 그래프를 보면
+  
