@@ -36,5 +36,7 @@ loss 차트
 
   함수를 정의하고, 아래와 같이 호출시 위와 같은 그림이 나온다.
   learning_curve(history, 10)
-러닝커브 함수를 사용하면, loss값과 accuracy값이 눈에 한번에 보여 분석하기 쉽다. 그래프를 보면
+러닝커브 함수를 사용하면, loss값과 accuracy값이 눈에 한번에 보여 분석하기 쉽다. 그래프를 보면 빨간선이 validation값이고, 파란선이 train값이다.
+X축은 epoch인걸 알수있는데, 위 그래프에서는 epoch 4~5 사이에서부터 validation값과, train값의 loss와 accuracy차이가 증가함을 볼 수 있다.
+이러한 상황을 오버피팅 되었다고 하는데, 너무 많은 데이터를 학습시키면 train값의 loss는 줄어들고, accuracy는 올라갈수 있어도, 새로 알게되는 값, 즉 우리가 예측해야 할 값을 제대로 예측하지 못하는 상황이 발생한다.
   
