@@ -5,8 +5,9 @@ ex) model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy', me
 ### 러닝커브 함수 코드와 트레이닝 어큐러시, 밸리데이션 어큐러시를 통한 오버피팅 
 러닝커브 함수사용법
 
-def learning_curve(history, epoch) :
-
+def learning_curve(history, epoch):
+  class gejop:
+  
   plt.figure(figsize=(10,5))
 
   epoch_range = np.arange(1, epoch +1)
