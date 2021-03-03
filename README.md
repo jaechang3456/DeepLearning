@@ -6,7 +6,6 @@ ex) model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy', me
 러닝커브 함수사용법
 
 def learning_curve(history, epoch):
-  class gejop:
   
   plt.figure(figsize=(10,5))
 
