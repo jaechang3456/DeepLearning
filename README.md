@@ -5,29 +5,25 @@
 ### 2. 러닝커브 함수 코드와 트레이닝 어큐러시, 밸리데이션 어큐러시를 통한 오버피팅 
 - 러닝커브 함수사용법
 - def learning_curve(history, epoch):
-  
-    plt.figure(figsize=(10,5))
-
-    epoch_range = np.arange(1, epoch +1)
-
-    plt.subplot(1, 2, 1)
-
-    plt.plot(epoch_range, history.history['accuracy'])
-    plt.plot(epoch_range, history.history['val_accuracy'])
-    plt.title('Model Accuracy')
-    plt.xlabel('Epoch')
-    plt.ylabel('Accuracy')
-    plt.legend(['Train', 'Val'])
-
-    plt.subplot(1, 2, 2)
-
-    plt.plot(epoch_range, history.history['loss'])
-    plt.plot(epoch_range, history.history['val_loss'])
-    plt.title('Model Loss')
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-    plt.legend(['Train', 'Val'])
-    plt.show()
+-   plt.figure(figsize=(10,5))
+-   epoch_range = np.arange(1, epoch +1)
+-   plt.subplot(1, 2, 1)
+-   
+-   plt.plot(epoch_range, history.history['accuracy'])
+-   plt.plot(epoch_range, history.history['val_accuracy'])
+-   plt.title('Model Accuracy')
+-   plt.xlabel('Epoch')
+-   plt.ylabel('Accuracy')
+-   plt.legend(['Train', 'Val'])
+-   
+-   plt.subplot(1, 2, 2)
+-   plt.plot(epoch_range, history.history['loss'])
+-   plt.plot(epoch_range, history.history['val_loss'])
+-   plt.title('Model Loss')
+-   plt.xlabel('Epoch')
+-   plt.ylabel('Loss')
+-   plt.legend(['Train', 'Val'])
+-   plt.show()
 
   
 ![다운로드](https://user-images.githubusercontent.com/78472987/109621966-eef40f80-7b7e-11eb-8831-c7c82f7e6c15.png)
